@@ -1,0 +1,421 @@
+*{
+margin:0;
+padding:0;
+box-sizing:border-box;
+font-family:Poppins;
+}
+
+body{
+background:#0c0c0c;
+color:white;
+}
+
+/* NAV */
+nav{ position:fixed; width:100%; top:0; display:flex; justify-content:space-between; padding:15px 8%; background:rgba(0,0,0,0.7); backdrop-filter:blur(10px); z-index:1000; }
+
+
+.logo{
+color:#f4c430;
+font-weight:700;
+font-size:1.3rem;
+}
+
+
+
+/* HERO */
+
+.hero{
+height:100vh;
+display:flex;
+justify-content:center;
+align-items:center;
+text-align:center;
+background:
+linear-gradient(rgba(0,0,0,0.7),rgba(0,0,0,0.9)),
+url("https://images.unsplash.com/photo-1517248135467-4c7edcad34c4?q=80&w=1974");
+background-size:cover;
+}
+
+.hero h1{
+font-size:3rem;
+}
+
+.hero p{
+margin:20px 0;
+opacity:0.8;
+}
+
+.btn{
+padding:14px 30px;
+border-radius:40px;
+background:#f4c430;
+border:none;
+font-weight:600;
+cursor:pointer;
+text-decoration:none;
+color:black;
+}
+
+/* PROMO */
+
+.promo{
+background:#f4c430;
+color:black;
+text-align:center;
+padding:15px;
+font-weight:600;
+animation:blink 2s infinite alternate;
+}
+
+@keyframes blink{
+from{opacity:1;}
+to{opacity:0.6;}
+}
+
+/* SECTION */
+
+section{
+padding:80px 8%;
+}
+
+/* FOOD SLIDER */
+
+.slider{
+overflow:hidden;
+}
+
+.slide-track{
+display:flex;
+animation:scroll 12s linear infinite;
+}
+
+.slide-track img{
+width:300px;
+height:200px;
+object-fit:cover;
+margin-right:20px;
+border-radius:15px;
+}
+
+@keyframes scroll{
+from{transform:translateX(0);}
+to{transform:translateX(-50%);}
+}
+
+/* ABOUT */
+
+.about{
+display:grid;
+grid-template-columns:1fr 1fr;
+gap:40px;
+align-items:center;
+}
+
+.about img{
+width:100%;
+border-radius:20px;
+}
+
+/* EVENTS */
+
+.events{
+display:grid;
+grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
+gap:30px;
+}
+
+.event-card{
+background:#1b1b1b;
+padding:25px;
+border-radius:15px;
+}
+
+/* CTA */
+
+.cta{
+background:#f4c430;
+color:black;
+text-align:center;
+padding:60px;
+border-radius:20px;
+}
+
+/* FLOATING WHATSAPP */
+
+.whatsapp{
+position:fixed;
+bottom:20px;
+right:20px;
+background:#25d366;
+color:white;
+padding:15px 18px;
+border-radius:50%;
+font-size:22px;
+text-decoration:none;
+}
+
+/* MOBILE */
+
+@media(max-width:800px){
+.about{
+grid-template-columns:1fr;
+}
+.hero h1{
+font-size:2.2rem;
+}
+}
+/* NAVBAR */
+
+
+
+.logo{
+color:#f4c430;
+font-weight:700;
+font-size:1.3rem;
+}
+
+.nav-links{
+display:flex;
+gap:20px;
+}
+
+.nav-links a{
+color:white;
+text-decoration:none;
+}
+
+/* HAMBURGER */
+
+.hamburger{
+display:none;
+font-size:1.8rem;
+cursor:pointer;
+}
+
+/* MOBILE NAV */
+
+@media(max-width:800px){
+
+.hamburger{
+display:block;
+}
+
+.nav-links{
+position:absolute;
+top:70px;
+left:0;
+width:100%;
+background:#111;
+flex-direction:column;
+text-align:center;
+max-height:0;
+overflow:hidden;
+transition:0.4s ease;
+}
+
+.nav-links a{
+padding:15px;
+border-top:1px solid #222;
+}
+
+.nav-links.active{
+max-height:300px;
+}
+
+}
+/* NAVBAR BASE */
+
+
+
+.logo{
+color:#f4c430;
+font-weight:700;
+font-size:1.3rem;
+letter-spacing:2px;
+}
+
+/* DESKTOP MENU */
+
+.nav-menu{
+display:flex;
+gap:30px;
+}
+
+.nav-menu a{
+text-decoration:none;
+color:white;
+font-size:0.9rem;
+position:relative;
+}
+
+/* Hover underline */
+
+.nav-menu a::after{
+content:"";
+position:absolute;
+width:0%;
+height:2px;
+background:#f4c430;
+bottom:-5px;
+left:0;
+transition:0.3s;
+}
+
+.nav-menu a:hover::after{
+width:100%;
+}
+
+/* HAMBURGER ICON */
+
+.menu-toggle{
+display:none;
+flex-direction:column;
+cursor:pointer;
+gap:5px;
+}
+
+.menu-toggle span{
+width:28px;
+height:3px;
+background:white;
+transition:0.4s;
+}
+
+/* Animate hamburger into X */
+
+.menu-toggle.active span:nth-child(1){
+transform:rotate(45deg) translate(6px,6px);
+}
+
+.menu-toggle.active span:nth-child(2){
+opacity:0;
+}
+
+.menu-toggle.active span:nth-child(3){
+transform:rotate(-45deg) translate(6px,-6px);
+}
+
+/* MOBILE MENU */
+
+@media(max-width:850px){
+
+.menu-toggle{
+display:flex;
+}
+
+/* SIDE MENU */
+
+.nav-menu{
+position:fixed;
+top:0;
+right:-100%;
+height:auto;
+min-height: 300px;
+width:220px;
+background:rgba(10,10,10,0.95);
+backdrop-filter:blur(15px);
+flex-direction:column;
+align-items:center;
+justify-content:flex-start;
+padding-top:120px;
+position: fixed;
+overflow: hidden;
+gap:40px;
+transition:0.4s cubic-bezier(.77,0,.18,1);
+box-shadow:-5px 0 25px rgba(0,0,0,0.6);
+
+}
+
+.nav-menu.active{
+right:0;
+}
+.nav-menu a:last-child{
+margin-bottom:20px;
+}
+
+.nav-menu a{
+font-size:1.2rem;
+}
+
+/* OVERLAY */
+
+.overlay{
+position:fixed;
+top:0;
+left:0;
+width:100%;
+height:100%;
+background:rgba(0,0,0,0.6);
+opacity:0;
+pointer-events:none;
+transition:0.4s;
+}
+
+.overlay.active{
+opacity:1;
+pointer-events:all;
+}
+
+}
+.close-btn{
+display:none;
+position:absolute;
+top:25px;
+right:25px;
+font-size:1.5rem;
+cursor:pointer;
+color:white;
+}
+
+
+
+.close-btn:hover{
+transform:rotate(90deg);
+color:#f4c430;
+transition:0.3s;
+cursor: pointer;
+}
+.nav-menu.active .close-btn{
+display:block;
+}
+
+.nav-menu.active ~ .menu-toggle{
+opacity:0;
+pointer-events:none;
+}
+
+.food-menu h2{
+margin-bottom:40px;
+}
+
+.food-grid{
+display:grid;
+grid-template-columns:repeat(auto-fit,minmax(220px,1fr));
+gap:30px;
+}
+
+.food-card{
+background:#1b1b1b;
+border-radius:15px;
+overflow:hidden;
+transform:translateY(40px);
+opacity:0;
+transition:0.6s ease;
+}
+
+.food-card img{
+width:100%;
+height:180px;
+object-fit:cover;
+}
+
+.food-card h3{
+padding:15px;
+}
+
+.price{
+color:#f4c430;
+padding:0 15px 20px;
+display:block;
+font-weight:600;
+}
